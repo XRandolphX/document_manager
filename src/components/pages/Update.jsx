@@ -17,6 +17,8 @@ import update_file_img from "../../assets/update_file.png";
 //Spinner
 import ClockLoader from "react-spinners/ClockLoader";
 
+import { Modal, Container, Row, Col, Button, Card } from "react-bootstrap";
+
 const Update = () => {
   let { id } = useParams();
   const fetchDocumentById = async (id) => {
@@ -137,10 +139,15 @@ const Update = () => {
 
   return (
     <div>
-      <div style={styles.toolbar}>
-        <button onClick={openSidebar} style={styles.sidebarToggle}>
-          <FaBars />
-        </button>
+      <div>
+        <Row className="justify-content-between align-items-center my-3">
+          <Col xs="auto">
+            <Button variant="primary" onClick={openSidebar}>
+              <FaBars />
+            </Button>
+          </Col>
+          <Col xs="auto"></Col>
+        </Row>
       </div>
       <div className="form">
         <div className="d-flex justify-content-between align-items-center">

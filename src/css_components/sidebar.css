@@ -1,83 +1,88 @@
+/* Estilos básicos del sidebar */
 .sidebar {
-  background: rgba(255, 255, 255, 0.95);
+  background-color: #f4f4f4; /* Color de fondo */
   width: 250px; /* Ancho del sidebar */
-  height: 100%; /* Altura completa */
-  position: fixed; /* Posición fija en la pantalla */
+  height: 100vh; /* Altura completa */
+  position: fixed; /* Posición fija */
   top: 0;
   left: 0;
-  transform: translateX(-100%); /* Ocultar inicialmente el sidebar */
-  transition: transform 0.3s ease-in-out; /* Transición suave para mostrar/ocultar */
-  z-index: 10; /* Asegurar que el sidebar esté por encima de otros elementos */
+  transform: translateX(-100%); /* Ocultar sidebar */
+  transition: transform 0.3s ease-in-out; /* Transición suave */
 }
 
-/* Muestra el sidebar */
+/* Mostrar sidebar */
 .show-sidebar {
   transform: translateX(0); /* Muestra el sidebar */
 }
 
-/* Cabecera del sidebar */
+/* Encabezado del sidebar */
 .sidebar-header {
+  padding: 1rem; /* Espaciado interno */
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Espacio entre logo y botón de cierre */
-  padding: 1rem;
-  border-bottom: 1px solid #ddd; /* Borde sutil para separar la cabecera */
+  justify-content: space-between; /* Espacio entre elementos */
 }
 
-/* Logo del sidebar */
+/* Logo */
 .logo {
-  max-width: 100px; /* Asegurar que el logo no sobrepase el ancho del sidebar */
-  height: 100px; /* Mantener la proporción del logo */
+  display: block; /* Asegura que se muestre correctamente */
+  margin: 0 auto; /* Centrar logo */
 }
 
-/* Botón de cierre del sidebar */
+/* Texto del encabezado */
+.sidebar-header p {
+  margin: 0; /* Remover márgenes por defecto */
+  color: #333; /* Color del texto */
+  font-weight: bold; /* Texto en negrita */
+}
+
+/* Botón de cierre */
 .close-btn {
   background: transparent;
   border: none;
-  font-size: 1.5rem; /* Tamaño del icono de cierre */
+  font-size: 1.5rem;
   cursor: pointer;
 }
 
-/* Estilo de los enlaces */
+/* Enlaces del sidebar */
+.links {
+  list-style-type: none; /* Remover viñetas */
+  padding: 0; /* Remover padding por defecto */
+}
 
 .links li {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem; /* Espaciado de cada elemento */
 }
 
 .links a {
-  text-decoration: none;
-  color: #333; /* Color oscuro para los enlaces */
-  font-size: 1rem;
-  display: flex;
-  align-items: center; /* Alineación vertical de iconos y texto */
+  text-decoration: none; /* Remover subrayado */
+  color: #333; /* Color del texto */
+  font-size: 1rem; /* Tamaño del texto */
+  display: flex; /* Para alinear ícono y texto */
+  align-items: center; /* Alinear verticalmente */
 }
 
-.links a,
-.social-icons a {
-  font-size: 1.2rem; /* Ajusta el tamaño como sea necesario */
-}
-
-.links a:hover {
-  background: #e6e6e6; /* Fondo al pasar el ratón */
-}
-
-/* Iconos de redes sociales en el sidebar */
+/* Iconos sociales */
 .social-icons {
   list-style-type: none;
+  padding: 0;
   display: flex;
-  justify-content: space-around; /* Espaciado uniforme */
-  padding: 1rem;
+  justify-content: space-around; /* Espaciado entre iconos */
+  margin-top: 1rem; /* Margen superior */
 }
 
 .social-icons li {
-  padding: 0 10px; /* Añadir un poco de espacio horizontalmente */
+  padding: 0.5rem;
 }
 
 .social-icons a {
-  color: #333; /* Color para los iconos de redes sociales */
-  font-size: 1.5rem; /* Tamaño de los iconos de redes sociales */
+  color: #333;
+  font-size: 1.2rem;
 }
 
-.social-icons a:hover {
-  color: #007bff; /* Cambio de color al pasar el ratón */
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
 }

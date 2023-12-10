@@ -12,8 +12,6 @@ import logo_user from "../../assets/male_user.png";
 import { useGlobalContext } from "../context";
 //ICONS
 import { FaBars } from "react-icons/fa";
-//Styles
-import styles from "../styles/styles";
 //Navigate
 import { useNavigate } from "react-router-dom";
 
@@ -92,10 +90,15 @@ const UserRegistrationForm = () => {
 
   return (
     <Container>
-      <div style={styles.toolbar}>
-        <button onClick={openSidebar} style={styles.sidebarToggle}>
-          <FaBars />
-        </button>
+      <div>
+        <Row className="justify-content-between align-items-center my-3">
+          <Col xs="auto">
+            <Button variant="primary" onClick={openSidebar}>
+              <FaBars />
+            </Button>
+          </Col>
+          <Col xs="auto"></Col>
+        </Row>
       </div>
       <Row className="justify-content-md-center">
         <Col xs lg="7">

@@ -3,7 +3,6 @@ import {
   BsFillHouseFill,
   BsFillFileEarmarkMedicalFill,
   BsFillFileEarmarkPlusFill,
-  BsArrowRepeat,
   BsFacebook,
   BsFillEnvelopeAtFill,
   BsFillTelephoneFill,

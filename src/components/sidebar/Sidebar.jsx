@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import logo from "../../assets/logo_ricardo_palma.png";
 import { useGlobalContext } from "../context";
 import { FaTimes } from "react-icons/fa";
@@ -70,7 +70,6 @@ const Sidebar = () => {
           );
         })}
       </ul>
-      
     </aside>
   );
 };

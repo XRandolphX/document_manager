@@ -121,13 +121,9 @@ function Documents() {
   return (
     <div>
       <div>
-        <Row className="justify-content-between align-items-center my-3 custom-row">
+        <Row className="justify-content-between align-items-center my-3">
           <Col xs="auto">
-            <Button
-              variant="primary"
-              onClick={openSidebar}
-              className="custom-button"
-            >
+            <Button variant="primary" onClick={openSidebar}>
               <FaBars />
             </Button>
           </Col>

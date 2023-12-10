@@ -238,7 +238,7 @@ const DocumentGenerator = () => {
     <Container fluid className="d-flex flex-column vh-100 custom-container">
       <Row className="mt-3 mb-3">
         <Col xs={12} className="d-flex justify-content-start">
-          <Button variant="outline-secondary" onClick={openSidebar}>
+          <Button className="btn-custom" variant="outline-secondary" onClick={openSidebar}>
             <FaBars />
           </Button>
         </Col>

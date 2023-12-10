@@ -17,10 +17,12 @@ import add_file_img from "../../assets/add-file.png";
 import { uploadFile } from "../../../firebase/config";
 //Spinner
 import ClockLoader from "react-spinners/ClockLoader";
+//Bootstrap
+import { Modal, Container, Row, Col, Button, Card } from "react-bootstrap";
 
 const Add = () => {
   //Constante del Contexto Global
-  const { openSidebar, openModal } = useGlobalContext();
+  const { openSidebar } = useGlobalContext();
   // Navegación
   const navigate = useNavigate();
 
@@ -111,10 +113,15 @@ const Add = () => {
 
   return (
     <div>
-      <div style={styles.toolbar}>
-        <button onClick={openSidebar} style={styles.sidebarToggle}>
-          <FaBars />
-        </button>
+      <div>
+        <Row className="justify-content-between align-items-center my-3">
+          <Col xs="auto">
+            <Button variant="primary" onClick={openSidebar}>
+              <FaBars />
+            </Button>
+          </Col>
+          <Col xs="auto"></Col>
+        </Row>
       </div>
       <div className="form">
         <div className="d-flex justify-content-between align-items-center">
