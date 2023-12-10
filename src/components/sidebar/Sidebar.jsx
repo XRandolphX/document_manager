@@ -70,6 +70,7 @@ const Sidebar = () => {
           );
         })}
       </ul>
+      
     </aside>
   );
 };

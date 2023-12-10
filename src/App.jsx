@@ -4,7 +4,8 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 //BrowserRouter
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 //Components
 import Modal from "./components/Modal";
 import Sidebar from "./components/sidebar/Sidebar";
@@ -21,8 +22,20 @@ import "./styleApp.css";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Modal />
+    // <BrowserRouter>
+    //   <Modal />
+    //   <Sidebar />
+    //   <Routes>
+    //     <Route path="/" element={<Login />} />
+    //     <Route path="/register" element={<Register />} />
+    //     <Route path="/home" element={<Home />} />
+    //     <Route path="/docs" element={<Documents />} />
+    //     <Route path="/add" element={<Add />} />
+    //     <Route path="/update/:id" element={<Update />} />
+    //     <Route path="*" element={<NotFound />} />
+    //   </Routes>
+    // </BrowserRouter>
+    <div>
       <Sidebar />
       <Routes>
         <Route path="/" element={<Login />} />
@@ -33,7 +46,7 @@ function App() {
         <Route path="/update/:id" element={<Update />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </BrowserRouter>
+    </div>
   );
 }
 export default App;
