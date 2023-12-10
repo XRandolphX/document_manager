@@ -1,0 +1,83 @@
+.sidebar {
+  background: rgba(255, 255, 255, 0.95);
+  width: 250px; /* Ancho del sidebar */
+  height: 100%; /* Altura completa */
+  position: fixed; /* Posición fija en la pantalla */
+  top: 0;
+  left: 0;
+  transform: translateX(-100%); /* Ocultar inicialmente el sidebar */
+  transition: transform 0.3s ease-in-out; /* Transición suave para mostrar/ocultar */
+  z-index: 10; /* Asegurar que el sidebar esté por encima de otros elementos */
+}
+
+/* Muestra el sidebar */
+.show-sidebar {
+  transform: translateX(0); /* Muestra el sidebar */
+}
+
+/* Cabecera del sidebar */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Espacio entre logo y botón de cierre */
+  padding: 1rem;
+  border-bottom: 1px solid #ddd; /* Borde sutil para separar la cabecera */
+}
+
+/* Logo del sidebar */
+.logo {
+  max-width: 100px; /* Asegurar que el logo no sobrepase el ancho del sidebar */
+  height: 100px; /* Mantener la proporción del logo */
+}
+
+/* Botón de cierre del sidebar */
+.close-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem; /* Tamaño del icono de cierre */
+  cursor: pointer;
+}
+
+/* Estilo de los enlaces */
+
+.links li {
+  padding: 0.5rem 1rem;
+}
+
+.links a {
+  text-decoration: none;
+  color: #333; /* Color oscuro para los enlaces */
+  font-size: 1rem;
+  display: flex;
+  align-items: center; /* Alineación vertical de iconos y texto */
+}
+
+.links a,
+.social-icons a {
+  font-size: 1.2rem; /* Ajusta el tamaño como sea necesario */
+}
+
+.links a:hover {
+  background: #e6e6e6; /* Fondo al pasar el ratón */
+}
+
+/* Iconos de redes sociales en el sidebar */
+.social-icons {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around; /* Espaciado uniforme */
+  padding: 1rem;
+}
+
+.social-icons li {
+  padding: 0 10px; /* Añadir un poco de espacio horizontalmente */
+}
+
+.social-icons a {
+  color: #333; /* Color para los iconos de redes sociales */
+  font-size: 1.5rem; /* Tamaño de los iconos de redes sociales */
+}
+
+.social-icons a:hover {
+  color: #007bff; /* Cambio de color al pasar el ratón */
+}

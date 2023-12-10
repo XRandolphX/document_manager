@@ -1,0 +1,24 @@
+/* Estilos para los campos de entrada */
+.form input[type="text"],
+.form input[type="file"] {
+  width: 100%; /* Ancho completo */
+  padding: 10px; /* Espaciado interno */
+  margin-bottom: 15px; /* Margen inferior */
+  border: 1px solid #ccc; /* Borde */
+  border-radius: 4px; /* Bordes redondeados */
+}
+
+/* Estilos para el botón del formulario */
+.btn_add {
+  width: 100%; /* Ancho completo */
+  padding: 10px; /* Espaciado interno */
+  border: none; /* Sin borde */
+  background-color: #4caf50; /* Color de fondo */
+  color: white; /* Color del texto */
+  border-radius: 4px; /* Bordes redondeados */
+  cursor: pointer; /* Cursor como puntero */
+}
+
+.btn_add:hover {
+  background-color: #45a049; /* Color de fondo al pasar el ratón */
+}

@@ -1,0 +1,12 @@
+.bg-image {
+  background-image: url("../assets/wallpaper_colegio.jpg"); /* Ruta a tu imagen */
+  background-size: cover; /* Asegura que la imagen cubra todo el div */
+  background-position: center; /* Centra la imagen en el div */
+}
+
+.logo-RP {
+  display: flex; /* Esto activa Flexbox */
+  justify-content: space-between; /* Esto separa los elementos al máximo */
+  align-items: center; /* Esto centra los elementos verticalmente */
+  width: 100%; /* Esto asegura que el contenedor ocupe todo el ancho disponible */
+}

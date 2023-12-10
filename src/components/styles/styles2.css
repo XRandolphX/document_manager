@@ -1,0 +1,27 @@
+/* Estilo para la sidebar */
+.sidebar {
+  position: fixed; /* La posición fija hará que la sidebar se quede "pegada" al viewport */
+  left: 0;
+  top: 0;
+  height: 100%; /* Tendrá un alto del 100% para que cubra toda la altura del viewport */
+  z-index: 1000; /* z-index alto para que se superponga a otros elementos */
+  /* Resto de tus estilos de sidebar */
+}
+
+/* Estilo para el resto del contenido que no debe superponerse */
+.content {
+  z-index: 1; /* z-index más bajo que el de la sidebar */
+  position: relative; /* Esto es necesario para que z-index tenga efecto */
+  /* Resto de tus estilos para el contenido */
+}
+
+/* Si tienes un overlay o backdrop cuando la sidebar está activa */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 500; /* Menor que la sidebar pero mayor que el contenido para que se interponga entre ambos */
+}
