@@ -27,30 +27,24 @@ const UserRegistrationForm = () => {
     setUser({
       ...user,
       [e.target.name]: e.target.value,
-      
     });
-    console.log(e.target.value);
   };
 
   const handleSubmit = async (e) => {
-    // const navigate = useNavigate();
     e.preventDefault();
+    console.log("handleSubmit se ha ejecutado correctamente");
 
     try {
-      // Hacer la petición POST al servidor para registrar el usuario
       const response = await fetch(
         "https://ucvpppix.net/iadocs/users/register.php",
         {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
           body: JSON.stringify(user),
         }
       );
-
-      // Convertir la respuesta a JSON
+      console.log("Respuesta de la solicitud:", response);
       const data = await response.json();
+      console.log("Datos recibidos del servidor:", data);
 
       // Manejar la respuesta del servidor
       if (response.ok) {
@@ -87,12 +81,21 @@ const UserRegistrationForm = () => {
       alert("Error al realizar la petición: " + error);
     }
   };
-
   //Constante del Contexto Global
   const { openSidebar, openModal } = useGlobalContext();
 
   return (
     <Container>
+      <div>
+        <Row className="justify-content-between align-items-center my-3">
+          <Col xs="auto">
+            <Button variant="primary" onClick={openSidebar}>
+              <FaBars />
+            </Button>
+          </Col>
+          <Col xs="auto"></Col>
+        </Row>
+      </div>
       <Row className="justify-content-md-center">
         <Col xs lg="7">
           <h1 className="title text-center mt-5">Registro de Usuario</h1>
@@ -106,7 +109,7 @@ const UserRegistrationForm = () => {
           </div>
           <Form
             onSubmit={handleSubmit}
-            className="user-form mt-5 p-5 rounded-5 border border-dark"
+            className="user-form mt-3 p-5 rounded-5 border border-dark"
           >
             <Form.Group className="mb-2" controlId="formUserName">
               <Form.Label style={{ fontWeight: "bold" }}>Nombre</Form.Label>
