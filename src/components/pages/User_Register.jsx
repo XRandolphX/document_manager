@@ -52,19 +52,8 @@ const UserRegistrationForm = () => {
 
       // Manejar la respuesta del servidor
       if (response.ok) {
-        // Validación básica para comprobar si todos los campos están llenos
-        if (
-          !user.user_name ||
-          !user.user_lastname ||
-          !user.user_email ||
-          !user.user_password
-        ) {
-          alert("Todos los campos son obligatorios.");
-          return;
-        }
         console.log("Usuario registrado:", data);
-        // alert("Usuario registrado con éxito!");
-        Swal.fire("¡Todo bien!", "Usuario registrado", "success");
+        alert("Usuario registrado con éxito!");
         // Restablecer el estado del usuario para limpiar el formulario
         setUser({
           user_name: "",
@@ -74,11 +63,7 @@ const UserRegistrationForm = () => {
         });
       } else {
         console.error("Error al registrar el usuario:", data.message);
-        Swal.fire({
-          icon: "error",
-          title: "Oh noo...",
-          text: "¡Ocurrió un error!",
-        });
+        alert("Error al registrar el usuario: " + data.message);
       }
     } catch (error) {
       console.error("Error en la petición:", error);
