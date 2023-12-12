@@ -52,8 +52,19 @@ const UserRegistrationForm = () => {
 
       // Manejar la respuesta del servidor
       if (response.ok) {
+        // Validación básica para comprobar si todos los campos están llenos
+        if (
+          !user.user_name ||
+          !user.user_lastname ||
+          !user.user_email ||
+          !user.user_password
+        ) {
+          alert("Todos los campos son obligatorios.");
+          return;
+        }
         console.log("Usuario registrado:", data);
-        alert("Usuario registrado con éxito!");
+        // alert("Usuario registrado con éxito!");
+        Swal.fire("¡Todo bien!", "Usuario registrado", "success");
         // Restablecer el estado del usuario para limpiar el formulario
         setUser({
           user_name: "",
@@ -63,28 +74,23 @@ const UserRegistrationForm = () => {
         });
       } else {
         console.error("Error al registrar el usuario:", data.message);
-        alert("Error al registrar el usuario: " + data.message);
+        Swal.fire({
+          icon: "error",
+          title: "Oh noo...",
+          text: "¡Ocurrió un error!",
+        });
       }
     } catch (error) {
       console.error("Error en la petición:", error);
       alert("Error al realizar la petición: " + error);
     }
   };
+
   //Constante del Contexto Global
   const { openSidebar, openModal } = useGlobalContext();
 
   return (
     <Container>
-      <div>
-        <Row className="justify-content-between align-items-center my-3">
-          <Col xs="auto">
-            <Button variant="primary" onClick={openSidebar}>
-              <FaBars />
-            </Button>
-          </Col>
-          <Col xs="auto"></Col>
-        </Row>
-      </div>
       <Row className="justify-content-md-center">
         <Col xs lg="7">
           <h1 className="title text-center mt-5">Registro de Usuario</h1>
@@ -98,7 +104,7 @@ const UserRegistrationForm = () => {
           </div>
           <Form
             onSubmit={handleSubmit}
-            className="user-form mt-3 p-5 rounded-5 border border-dark"
+            className="user-form mt-5 p-5 rounded-5 border border-dark"
           >
             <Form.Group className="mb-2" controlId="formUserName">
               <Form.Label style={{ fontWeight: "bold" }}>Nombre</Form.Label>
